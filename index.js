@@ -32,7 +32,7 @@ window.onload = function() {
   if (show_bug) {
     console.log("Resizing canvas by setting view.viewSize...");
     paper.view.viewSize = [$div.offsetWidth, $div.offsetHeight];
-
+    
     console.log("New view size:");
     console.log(` view.size: ${view.size.toString()}`);
     console.log(` view.viewSize: ${view.viewSize.toString()}`);
@@ -42,6 +42,13 @@ window.onload = function() {
     content: "This text should be in the middle",
     point: [500, 350],
     justification: "right"
+  });
+
+  text.on("mouseenter", () => {
+    text.view.element.style.cursor = "text";
+  });
+  text.on("mouseleave", () => {
+    delete text.view.element.style.cursor;
   });
 
   console.log("Text position:");
