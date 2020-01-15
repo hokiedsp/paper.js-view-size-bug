@@ -48,7 +48,7 @@ window.onload = function() {
     text.view.element.style.cursor = "text";
   });
   text.on("mouseleave", () => {
-    delete text.view.element.style.cursor;
+    text.view.element.style.removeProperty("cursor");
   });
 
   console.log("Text position:");
